@@ -53,9 +53,11 @@ $(document).ready(function () {
                     total+=v.qty;
                 })
                 $(".cartNoti").html(total);
+                $(".cartTotal").html(0); 
             }
             else{
                 $(".cartNoti").html(total);
+                $(".cartTotal").html(0); 
             }
         }
     }

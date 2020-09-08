@@ -20,19 +20,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','PageController@mainfun')->name('mainpage');
 
-Route::get('brand','PageController@brandfun')->name('brandpage');
+Route::get('itemsbybrand/{id}','PageController@itemsbybrand')->name('itemsbybrandpage');
 
-Route::get('itemdetail','PageController@itemdetailfun')->name('itemdetailpage');
+Route::get('itemdetail/{id}','PageController@itemdetail')->name('itemdetailpage');
 
 Route::get('loginform','PageController@loginfun')->name('loginpage');
 
 Route::get('promotion','PageController@promotionfun')->name('promotionpage');
 
-Route::get('register','PageController@registerfun')->name('registerpage');
+Route::get('registerform','PageController@registerfun')->name('registerpage');
 
 Route::get('shoppingcart','PageController@shoppingcartfun')->name('shoppingcartpage');
 
-Route::get('subcategory','PageController@subcategoryfun')->name('subcategorypage');
+Route::get('subcategory/{id}','PageController@subcategoryfun')->name('subcategorypage');
 
 //backend
 

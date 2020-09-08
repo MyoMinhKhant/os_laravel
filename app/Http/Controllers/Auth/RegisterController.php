@@ -73,4 +73,23 @@ class RegisterController extends Controller
         $user->assignRole('Customer');
         return $user;
     }
+
+
+        protected function redirectTo()
+    {
+        $roles = auth()->user()->getRoleNames();
+
+        // Check user role
+        switch ($roles[0]) {
+            case 'Admin':
+                    return 'dashboard';
+                break;
+            case 'Customer':
+                    return 'shoppingcart';
+                break; 
+            default:
+                    return '/';  
+                break;
+        }
+    }
 }

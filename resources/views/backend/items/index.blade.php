@@ -36,7 +36,12 @@
 					<td>
 					<a href="" class="btn btn-success">Detail</a>
 				   <a href="{{route('items.edit',$item->id)}}" class="btn btn-warning">Edit</a>
-				   <a href="" class="btn btn-danger">Delete</a>
+				   <form action="{{route('items.destroy',$item->id)}}" onsubmit="return confirm('Are You Sure To Delete?')" class="d-inline-block" method="POST">
+				   	@csrf
+				   	@method("DELETE")
+				    <button class="btn btn-info" type="submit">Delete</button>
+				</form>
+			</td>
 				</tr>
 				@endforeach
 				</tbody>
